@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <div class="text-center py-32 bg-black">
+            <div class="text-2xl font-bold max-w-sm mx-auto bg-blue-400 rounded-2xl shadow-lg items-center space-x-4">
+                <h1 class="text-black">Timer</h1>
+                <input type="number">
+            <p  id="ouput" class="text-red-800">Time Start Here</p>
+            <button>Start Timer</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        var result = document.getElementById("ouput");
+        var startingNumber = 13;
+        var time = startingNumber * 60;
+
+        setInterval(updatetimer, 1000);
+
+        function updatetimer(){
+            var minites = Math.floor(time / 60);
+            var seconds = time % 60;
+            result.innerHTML = minites+" : "+seconds;
+            time--;
+        }
+    </script>
+    
+</body>
+</html>
